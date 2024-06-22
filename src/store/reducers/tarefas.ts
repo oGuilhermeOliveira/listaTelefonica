@@ -21,7 +21,7 @@ const initialState: TarefaState = {
       descricao: 'Estudar Typecript revendo o módulo 33',
       prioridade: enums.Prioridade.IMPORTANTE,
       status: enums.Status.PEDENTE,
-      titulo: 'Estudar Typecript'
+      titulo: 'Estudar TypeScript'
     },
     {
       id: 3,
