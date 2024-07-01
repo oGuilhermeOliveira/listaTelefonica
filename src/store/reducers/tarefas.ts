@@ -11,24 +11,24 @@ const initialState: TarefaState = {
   itens: [
     {
       id: 1,
-      descricao: 'Estudar JavaScript revendo o módulo 23',
-      prioridade: enums.Prioridade.URGENTE,
-      status: enums.Status.CONCLUIDA,
-      titulo: 'Estudar JavaScript'
+      descricao: '11999999999',
+      prioridade: enums.Prioridade.GMAIL,
+      // status: enums.Status.ONLINE,
+      titulo: 'Ebac'
     },
     {
       id: 2,
-      descricao: 'Estudar Typecript revendo o módulo 33',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PEDENTE,
-      titulo: 'Estudar TypeScript'
+      descricao: '11999999999',
+      prioridade: enums.Prioridade.HOTMAIL,
+      // status: enums.Status.ONLINE,
+      titulo: 'Professor'
     },
     {
       id: 3,
-      descricao: 'Estudar React revendo o módulo 36',
-      prioridade: enums.Prioridade.NORMAL,
-      status: enums.Status.PEDENTE,
-      titulo: 'Estudar React'
+      descricao: '11999999999',
+      prioridade: enums.Prioridade.YAHOO,
+      // status: enums.Status.OFFLINE,
+      titulo: 'Guilherme Oliveira'
     }
   ]
 }
@@ -74,9 +74,9 @@ const tarefasSlice = createSlice({
         (t) => t.id === action.payload.id
       )
       if (indexDaTarefa >= 0) {
-        state.itens[indexDaTarefa].status = action.payload.finalizado
-          ? enums.Status.CONCLUIDA
-          : enums.Status.PEDENTE
+        // state.itens[indexDaTarefa].status = action.payload.finalizado
+        // ? enums.Status.ONLINE
+        // : enums.Status.OFFLINE
       }
     }
   }

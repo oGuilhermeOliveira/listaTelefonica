@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux'
 
-import Tarefa from '../../../components/FiltroCard/Tarefa'
-import { MainContainer, Titulo } from '../../../styles'
+import Tarefa from '../../components/FiltroCard/Tarefa'
+import { MainContainer, Titulo } from '../../styles'
 
-import { RootReducer } from '../../../store'
+import { RootReducer } from '../../store'
 
 const ListaDeTarefas = () => {
   const { itens } = useSelector((state: RootReducer) => state.tarefas)
-  const { termo, criterio, valor } = useSelector(
+  const { termo, criterio /*, valor*/ } = useSelector(
     (state: RootReducer) => state.filtro
   )
   const filtraTarefas = () => {
@@ -19,13 +19,13 @@ const ListaDeTarefas = () => {
       )
 
       if (criterio === 'prioridade') {
-        tarefasFiltradas = tarefasFiltradas.filter(
-          (item) => item.prioridade === valor
-        )
+        // tarefasFiltradas = tarefasFiltradas.filter(
+        //   // (item) => item.prioridade === valor
+        // )
       } else if (criterio === 'status') {
-        tarefasFiltradas = tarefasFiltradas.filter(
-          (item) => item.status === valor
-        )
+        // tarefasFiltradas = tarefasFiltradas.filter(
+        // (item) => item.status === valor
+        // )
       }
 
       return tarefasFiltradas
@@ -41,9 +41,9 @@ const ListaDeTarefas = () => {
       termo !== undefined && termo?.length > 0 ? `e "${termo}"` : ''
 
     if (criterio === 'todas') {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como: todas ${complementacao}`
+      mensagem = `${quantidade} contato(s) encontrado(s) ${complementacao}`
     } else {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como: "${`${criterio} = ${valor}`}" ${complementacao} `
+      // mensagem = `${quantidade} tarefa(s) encontrada(s) como: "${`${criterio} = ${valor}`}" ${complementacao} `
     }
 
     return mensagem
@@ -62,7 +62,7 @@ const ListaDeTarefas = () => {
               id={t.id}
               descricao={t.descricao}
               prioridade={t.prioridade}
-              status={t.status}
+              // status={t.status}
               titulo={t.titulo}
             />
           </li>

@@ -1,10 +1,10 @@
 export enum Prioridade {
-  URGENTE = 'urgente',
-  IMPORTANTE = 'importante',
-  NORMAL = 'normal'
+  GMAIL = 'Gmail',
+  HOTMAIL = 'Hotmail',
+  YAHOO = 'Yahoo'
 }
 
-export enum Status {
-  PEDENTE = 'pendente',
-  CONCLUIDA = 'concluída'
-}
+// export enum Status {
+//   ONLINE = 'Online',
+//   OFFLINE = 'Offline'
+// }

@@ -6,6 +6,7 @@ import { Form, Opcoes, Opcao } from './styles'
 import { useDispatch } from 'react-redux'
 import * as enums from '../../utils/enums/Tarefa'
 import { cadastrar } from '../../store/reducers/tarefas'
+import * as S from '../Formulario/styles'
 
 const Formulario = () => {
   const dispatch = useDispatch()
@@ -13,7 +14,7 @@ const Formulario = () => {
 
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
-  const [prioridade, setPrioridade] = useState(enums.Prioridade.NORMAL)
+  const [prioridade, setPrioridade] = useState(enums.Prioridade.YAHOO)
 
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
@@ -22,8 +23,8 @@ const Formulario = () => {
       cadastrar({
         titulo,
         prioridade,
-        descricao,
-        status: enums.Status.PEDENTE
+        descricao
+        // status: enums.Status.OFFLINE
       })
     )
     navigate('/')
@@ -31,22 +32,22 @@ const Formulario = () => {
 
   return (
     <MainContainer>
-      <Titulo>Nova tarefa</Titulo>
+      <Titulo>Novo contato</Titulo>
       <Form onSubmit={cadastrarTarefa}>
         <Campo
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           type="text"
-          placeholder="Título"
+          placeholder="Nome"
         />
-        <Campo
+        <S.CampoNum
           value={descricao}
           onChange={({ target }) => setDescricao(target.value)}
-          as="textarea"
-          placeholder="Descrição da tarefa"
+          type="number"
+          placeholder="Número"
         />
         <Opcoes>
-          <p>Prioridade</p>
+          <p>E-mail</p>
           {Object.values(enums.Prioridade).map((prioridade) => (
             <Opcao key={prioridade}>
               <input
@@ -57,7 +58,7 @@ const Formulario = () => {
                   setPrioridade(e.target.value as enums.Prioridade)
                 }
                 id={prioridade}
-                defaultChecked={prioridade === enums.Prioridade.NORMAL}
+                defaultChecked={prioridade === enums.Prioridade.YAHOO}
               />{' '}
               <label htmlFor={prioridade}>{prioridade}</label>
             </Opcao>

@@ -6,18 +6,18 @@ import { Botao } from '../../../styles'
 
 type TagProps = {
   prioridade?: enums.Prioridade
-  status?: enums.Status
+  // status?: enums.Status
   parametro: 'status' | 'prioridade'
 }
 
 function retornaCorDeFundo(props: TagProps): string {
   if (props.parametro === 'prioridade') {
-    if (props.prioridade === enums.Prioridade.URGENTE) return variaveis.vermelho
-    if (props.prioridade === enums.Prioridade.IMPORTANTE)
-      return variaveis.amarelo2
+    if (props.prioridade === enums.Prioridade.GMAIL) return variaveis.vermelho
+    if (props.prioridade === enums.Prioridade.HOTMAIL) return variaveis.azul
+    if (props.prioridade === enums.Prioridade.YAHOO) return variaveis.roxo
   } else {
-    if (props.status === enums.Status.PEDENTE) return variaveis.amarelo
-    if (props.status === enums.Status.CONCLUIDA) return variaveis.verde
+    // if (props.status === enums.Status.OFFLINE) return variaveis.amarelo
+    // if (props.status === enums.Status.ONLINE) return variaveis.verde
   }
 
   return '#ccc'
@@ -40,7 +40,6 @@ export const Card = styled.div`
 export const Titulo = styled.h3`
   font-size: 18px;
   font-weight: bold;
-  margin-left: 16px;
 `
 
 export const Tag = styled.span<TagProps>`
